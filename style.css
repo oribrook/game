@@ -1,6 +1,16 @@
 body {
     background-color: black;
 }
+
+#score {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    font-size: 150;
+    size: 150;
+    color: white;    
+}
+
 #player {    
     position: absolute;
     top: 50%;

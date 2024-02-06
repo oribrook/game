@@ -38,9 +38,17 @@ function checkCollision() {
         }
         console.log("col!");
         en.x = en.y = 0;
+        score++;
+        updateScore()
         return true;
     }    
     return false;
+}
+
+function updateScore() {
+    elem = document.getElementById("score")
+    elem.textContent = `Score: ${score}`
+    
 }
 
 function animateShot() {
