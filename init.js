@@ -1,0 +1,1 @@
+let gameSpeed = 5
