@@ -13,7 +13,7 @@ class Enemy {
   constructor() {
     this.enemyImage = new Image();
     this.enemyImage.src = "enemy1.jpg";
-    this.x = Math.floor(Math.random() * en_canvas.width);
+    this.x = Math.floor(Math.random() * (en_canvas.width*0.8)) + 0.2*en_canvas.width;
     this.y = Math.floor(Math.random() * en_canvas.height);
     this.width = 50;
     this.height = 50;
@@ -22,7 +22,7 @@ class Enemy {
     this.dirY = Math.random() - 0.5;
   }
   randomPosition() {
-    this.x = Math.floor(Math.random() * en_canvas.width);
+    this.x = Math.floor(Math.random() * (en_canvas.width*0.8)) + 0.2*en_canvas.width;
     this.y = Math.floor(Math.random() * en_canvas.height);
   }
   update() {
@@ -41,7 +41,7 @@ class Enemy {
         this.randomPosition()
         //   this.y = 0;
     }
-    if (this.x + this.width / 2 <= 0) {
+    if (this.x + this.width / 2 <= 0.2*EN_CANVAS_WIDTH) {
         // this.x = EN_CANVAS_WIDTH - this.width;
         this.randomPosition()
     }
@@ -65,7 +65,7 @@ class Enemy {
   }
 }
 
-for (i = 0; i < 3; i++) {
+for (i = 0; i < 5; i++) {
   enemies.push(new Enemy());
 }
 
