@@ -39,8 +39,20 @@ document.addEventListener("touchstart", function (event) {
 });
 
 function handleTouch(x, y) {
-  if (x < playerX + 400) {
-    if (y > (playerY +100)) {
+    mainCanvas = document.getElementById('bgCanvas');
+    rect = mainCanvas.getBoundingClientRect();
+    // middleY = (rect.bottom - rect.top) * 0.5;
+    middleX = (rect.right - rect.left) * 0.5;
+    
+    py = rect.top + playerY
+    px = rect.top + playerY
+    console.log(x, y);
+    // console.log(middleX, middleY);
+    console.log(rect.left, rect.right);
+    console.log(rect.top, rect.bottom);
+
+  if (x < middleX) {
+    if (y > py) {
       playerY += 15;
     } else {
       playerY -= 15;

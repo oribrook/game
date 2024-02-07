@@ -9,6 +9,8 @@ const EN_CANVAS_HEIGHT = (en_canvas.height = 700);
 const enemySpriteWidth = Math.floor(860 / 5);
 const enemySpriteHeight = Math.floor(474 / 3);
 
+const speed = 5
+
 class Enemy {
   constructor() {
     this.enemyImage = new Image();
@@ -18,8 +20,8 @@ class Enemy {
     this.width = 50;
     this.height = 50;
     this.frame = 0;
-    this.dirX = Math.random() - 0.5;
-    this.dirY = Math.random() - 0.5;
+    this.dirX = (Math.random() - 0.5)*speed;
+    this.dirY = (Math.random() - 0.5)*speed;
   }
   randomPosition() {
     this.x = Math.floor(Math.random() * (en_canvas.width*0.8)) + 0.2*en_canvas.width;

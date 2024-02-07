@@ -7,7 +7,8 @@ const CANVAS_HEIGHT = (canvas.height = 700);
 
 const playerImage = new Image();
 playerImage.src = "2.jpg";
-const spriteWidth = 660 / 8;
+playerImage.src = "spaceship.PNG";
+const spriteWidth = 638 / 8;
 const spriteHeight = 213 / 2;
 
 playerY = CANVAS_HEIGHT/2 - spriteHeight/2

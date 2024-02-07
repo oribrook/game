@@ -1,5 +1,10 @@
+.sortable-handler {
+    touch-action: none;
+  }
+
 body {
     background-color: black;
+    touch-action: none;
 }
 
 

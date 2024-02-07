@@ -13,8 +13,8 @@ failSound.src = "fail.mp3";
 const shotImage = new Image();
 shotImage.src = "shot.png";
 
-const shotWidth = 30;
-const shotHeight = 30;
+const shotWidth = 50;
+const shotHeight = 15;
 
 function startShot() {
   if (!shotActive) {
@@ -55,7 +55,7 @@ function updateScore() {
 function animateShot() {
   shotCtx.clearRect(0, 0, SHOT_CANVAS_WIDTH, SHOT_CANVAS_HEIGHT);
   if (shotActive) {
-    shotCtx.drawImage(shotImage, shotX, shotY, shotWidth, shotHeight);
+    shotCtx.drawImage(shotImage, shotX, shotY+20, shotWidth, shotHeight);
     shotX += 15;
     if (checkCollision()) {
       colSound.play();

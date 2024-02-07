@@ -1,3 +1,8 @@
+
+
+canvasWidth = window.innerWidth * 0.8;
+canvasHeight = window.innerHeight * 0.6;
+
 let shotActive = false;
 
 let score = 0;
