@@ -13,6 +13,18 @@ failSound.src = "fail.mp3";
 const shotImage = new Image();
 shotImage.src = "shot.png";
 
+class Shot {
+  constructor(y, x, width, height) {
+    this.y = y;
+    this.x = x;
+    this.width = width;
+    this.height = height;
+  }
+  update() {
+    this.x += 15;
+  }
+}
+
 const shotWidth = 50;
 const shotHeight = 15;
 
@@ -24,7 +36,7 @@ function startShot() {
   }
 }
 
-function checkCollision() {  
+function checkCollision() {
   res = true;
   for (i = 0; i < enemies.length; i++) {
     en = enemies[i];
@@ -38,11 +50,11 @@ function checkCollision() {
       (shotCenterX - enCenterX) ** 2 + (shotCenterY - enCenterY) ** 2
     );
 
-      if (distance < en.width / 2 + shotWidth / 2) {
-        en.randomPosition()
+    if (distance < en.width / 2 + shotWidth / 2) {
+      en.randomPosition();
       return true;
     }
-    continue;   
+    continue;
   }
   return false;
 }
@@ -55,17 +67,16 @@ function updateScore() {
 function animateShot() {
   shotCtx.clearRect(0, 0, SHOT_CANVAS_WIDTH, SHOT_CANVAS_HEIGHT);
   if (shotActive) {
-    shotCtx.drawImage(shotImage, shotX, shotY+20, shotWidth, shotHeight);
+    shotCtx.drawImage(shotImage, shotX, shotY + 20, shotWidth, shotHeight);
     shotX += 15;
     if (checkCollision()) {
       colSound.play();
       score++;
       updateScore();
-        shotActive = false;        
-    }
-    else if (shotX > SHOT_CANVAS_WIDTH) {
       shotActive = false;
-      failSound.play()        
+    } else if (shotX > SHOT_CANVAS_WIDTH) {
+      shotActive = false;
+      failSound.play();
       if (score > 0) {
         score--;
         updateScore();
