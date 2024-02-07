@@ -8,14 +8,14 @@ document.addEventListener('keydown', function (event) {
         gameSpeed += 5        
     }
     if (event.key === 'ArrowUp') {              
-        playerY -= 5;        
+        playerY -= 25;        
     }
     if (event.key === 'ArrowLeft') {      
         currentPosition = 'left';                
         gameSpeed -= 5        
     }
     if (event.key === 'ArrowDown') {                           
-        playerY += 5;        
+        playerY += 25;        
     }    
     if (event.code === 'Space') {        
         startShot()        
