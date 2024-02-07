@@ -2,13 +2,18 @@ body {
     background-color: black;
 }
 
+
 #score {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    font-size: 150;
-    size: 150;
-    color: white;    
+    background-color: white;
+    font-size: 100px;
+    width: fit-content;
+    margin: 50px;
+}
+#sound {
+    background-color: white;
+    font-size: 100px;
+    width: fit-content;
+    margin: 50px;
 }
 
 #player {    
@@ -17,7 +22,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 1024px;
-    height: 800px;
+    height: 700px;
 }
 #bgCanvas {    
     position: absolute;
@@ -30,11 +35,11 @@ body {
 #enemy {    
     border: 3px solid black;
     position: absolute;
-    top: 47%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 615px;
     width: 1024px;
+    height: 700px;
 }
 #shot {    
     border: 3px solid black;
@@ -42,6 +47,6 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 800px;
     width: 1024px;
+    height: 700px;
 }

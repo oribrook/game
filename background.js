@@ -2,7 +2,7 @@ const bgCanvas = document.getElementById("bgCanvas");
 const bg_ctx = bgCanvas.getContext('2d');
 
 const BG_CANVAS_WIDTH =  bgCanvas.width = 1024;
-const BG_CANVAS_HEIGHT =  bgCanvas.height = 576; 
+const BG_CANVAS_HEIGHT =  bgCanvas.height = 700; 
 
 // let gameSpeed = 5;
 
@@ -18,9 +18,9 @@ bgDir = 'r'
 function animateBG() {
     bg_ctx.clearRect(0, 0, BG_CANVAS_WIDTH, BG_CANVAS_HEIGHT);
         
-    bg_ctx.drawImage(backgroundLayer1, 0, 0, 1024, 510, bgx1, 0, 1024, 510);
-    bg_ctx.drawImage(backgroundLayer1, 0, 0, 1024, 510, bgx2, 0, 1024, 510);
-    bg_ctx.drawImage(backgroundLayer1, 0, 0, 1024, 510, bgx3, 0, 1024, 510);
+    bg_ctx.drawImage(backgroundLayer1, 0, 0, 1024, 510, bgx1, 0, 1024, BG_CANVAS_HEIGHT);
+    bg_ctx.drawImage(backgroundLayer1, 0, 0, 1024, 510, bgx2, 0, 1024, BG_CANVAS_HEIGHT);
+    bg_ctx.drawImage(backgroundLayer1, 0, 0, 1024, 510, bgx3, 0, 1024, BG_CANVAS_HEIGHT);
     
             
     if (bgDir == 'r') {

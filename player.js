@@ -2,13 +2,15 @@ const canvas = document.getElementById("player");
 const ctx = canvas.getContext("2d");
 
 const CANVAS_WIDTH = (canvas.width = 1024);
-const CANVAS_HEIGHT = (canvas.height = 800);
+const CANVAS_HEIGHT = (canvas.height = 700);
+
 
 const playerImage = new Image();
 playerImage.src = "2.jpg";
 const spriteWidth = 660 / 8;
 const spriteHeight = 213 / 2;
 
+playerY = CANVAS_HEIGHT/2 - spriteHeight/2
 frameX = 1;
 let gameFrame = 1;
 // let gameSpeed = 15;
