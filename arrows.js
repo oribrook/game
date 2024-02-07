@@ -21,28 +21,30 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
+let touchStartTime; // prevent double-touch
 document.addEventListener("touchstart", function (event) {
-  // Prevent the default behavior to avoid interference with touch gestures
+  const currentTime = new Date().getTime();
+  // Check the time difference to determine if it's a double-tap
+  if (touchStartTime && currentTime - touchStartTime < 300) {
+    event.preventDefault();
+    touchStartTime = null;
+  } else {
+    touchStartTime = currentTime;
+  }
   event.preventDefault();
-
-  // Retrieve the first touch object
   const touch = event.touches[0];
-
-  // Get the x, y coordinates
   const x = touch.clientX;
   const y = touch.clientY;
-
-  // Call your function with the coordinates
   handleTouch(x, y);
 });
 
 function handleTouch(x, y) {
-  // Your function logic with x, y coordinates
-  if (x < playerX + 300) {
-    if (y > playerY) {
-      playerY -= 15;
-    } else if (y > playerY + 100) {
+  if (x < playerX + 400) {
+    if (y > (playerY +100)) {
       playerY += 15;
+    } else {
+      playerY -= 15;
     }
-  } else startShot();
+  }
+  else startShot();
 }
