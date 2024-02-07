@@ -38,10 +38,10 @@ document.addEventListener("touchstart", function (event) {
 
 function handleTouch(x, y) {
   // Your function logic with x, y coordinates
-  if (x < playerX + 100) {
+  if (x < playerX + 300) {
     if (y > playerY) {
       playerY -= 15;
-    } else if (y < playerY + 100) {
+    } else if (y > playerY + 100) {
       playerY += 15;
     }
   } else startShot();
