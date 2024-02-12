@@ -10,8 +10,11 @@ document.addEventListener("keydown", function (event) {
     playerY -= 25;
   }
   if (event.key === "ArrowLeft") {
-    currentPosition = "left";
+    // currentPosition = "left";
     gameSpeed -= 5;
+    if (gameSpeed < 0) {
+      gameSpeed = 0;
+    }
   }
   if (event.key === "ArrowDown") {
     playerY += 25;
@@ -39,17 +42,17 @@ document.addEventListener("touchstart", function (event) {
 });
 
 function handleTouch(x, y) {
-    mainCanvas = document.getElementById('bgCanvas');
-    rect = mainCanvas.getBoundingClientRect();
-    // middleY = (rect.bottom - rect.top) * 0.5;
-    middleX = (rect.right - rect.left) * 0.5;
-    
-    py = rect.top + playerY
-    px = rect.top + playerY
-    console.log(x, y);
-    // console.log(middleX, middleY);
-    console.log(rect.left, rect.right);
-    console.log(rect.top, rect.bottom);
+  mainCanvas = document.getElementById("bgCanvas");
+  rect = mainCanvas.getBoundingClientRect();
+  // middleY = (rect.bottom - rect.top) * 0.5;
+  middleX = (rect.right - rect.left) * 0.5;
+
+  py = rect.top + playerY;
+  px = rect.top + playerY;
+  console.log(x, y);
+  // console.log(middleX, middleY);
+  console.log(rect.left, rect.right);
+  console.log(rect.top, rect.bottom);
 
   if (x < middleX) {
     if (y > py) {
@@ -57,6 +60,5 @@ function handleTouch(x, y) {
     } else {
       playerY -= 15;
     }
-  }
-  else startShot();
+  } else startShot();
 }
