@@ -7,11 +7,13 @@ const CANVAS_HEIGHT = (canvas.height = 700);
 
 const playerImage = new Image();
 playerImage.src = "2.jpg";
-playerImage.src = "spaceship.PNG";
-const spriteWidth = 638 / 8;
-const spriteHeight = 213 / 2;
+// playerImage.src = "spaceship.PNG";
+const playerWidth = 660 / 8;
+const playerHeight = 213 / 2;
+// const spriteWidth = 660 / 8;
+// const spriteHeight = 213 / 2;
 
-playerY = CANVAS_HEIGHT/2 - spriteHeight/2
+playerY = CANVAS_HEIGHT/2 - playerHeight/2
 frameX = 1;
 let gameFrame = 1;
 // let gameSpeed = 15;
@@ -25,10 +27,10 @@ function animate() {
   // ctx.drawImage(playerImage, sx, sy, sw, sh, dx, dy, dw, dh)
   ctx.drawImage(
     playerImage,
-    frameX * spriteWidth,
-    position[currentPosition] * spriteHeight,
-    spriteWidth,
-    spriteHeight,
+    frameX * playerWidth,
+    position[currentPosition] * playerHeight,
+    playerWidth,
+    playerHeight,
     playerX,
     playerY,
     100,
